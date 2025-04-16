@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+#tired a:link {
+	    color:#333; /*未访问的链接颜色*/
+}
+
+#top4{
+	background:url(image/%E5%9C%9F%E5%AE%B6%E6%97%8F.jpg) no-repeat center;
+	background-size:100%;
+	margin:0px auto;
+	height:200px;
+	width:1000px;
+}
+#ul4{
+	width:1000px;
+	height:750px;
+	margin:0px auto;
+	}
+#ul4 img{
+	width:200px;
+	height:auto;
+	}
+#ul4 li{
+	width:230px;
+	height:250px;
+	float:left;
+}
+#guide{
+	width:1000px;
+	margin:0px auto;
+	font-size:25px;
+	font-weight:bold;
+}
+#tired{
+	margin:0px auto;
+	width:500px;
+	height:50px;
+	}
+#tired li{
+	float:left;
+	height:20px;
+	width:120px;
+	}

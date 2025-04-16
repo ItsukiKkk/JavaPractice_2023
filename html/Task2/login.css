@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+#divLogin{
+	background:#FFF;
+	width:900px;
+	height:350px;
+	margin:0 auto;
+	margin-top:40px;
+}
+h1{
+	color:#000;
+	text-align:center;
+	margin-bottom:20px;
+	padding-top:15px;
+}
+#loginL{
+	float:left;
+	width:430px;
+	height:auto;
+	margin:40px 0px 0px 40px;
+	color:#000;
+}
+#loginL div{
+	float:left;
+	width:150px;
+	height:55px;
+	margin-top:15px;
+}
+#loginR{
+	float:right;
+	width:350px;
+	height:auto;
+	color:#000;
+	margin-top:40px;
+	line-height:50px;
+	font-size:12px;
+}
+#love{
+	width:200px;
+	height:auto;
+	float:right;
+	color:#000;
+	font-size:12px;
+}
+#line{
+	background:#0CF;
+	width:1px;
+	height:200px;
+	float:left;
+	margin-top:50px;
+}

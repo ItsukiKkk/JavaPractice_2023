@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #nav{
+            width:145px;
+            height: 34px;
+            float: left;
+        }
+        #nav a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-image: url(images/register.jpg);
+            background-size: inherit;
+        }
+        .phoneRegister {
+            display: none;
+        }
+    </style>
+    <SCRIPT>
+        function switchRegister(type) {
+            var emailRegister = document.getElementById("emailRegister");
+            var phoneRegister = document.getElementById("phoneRegister");
+            var resiE = document.getElementById("resiE");
+            var resiP = document.getElementById("resiP");
+
+            if (type === 'email') {
+                emailRegister.style.display = 'block';
+                phoneRegister.style.display = 'none';
+                resiE.setAttribute("disabled", true);
+                resiP.removeAttribute("disabled");
+            } else if (type === 'phone') {
+                emailRegister.style.display = 'none';
+                phoneRegister.style.display = 'block';
+                resiP.setAttribute("disabled", true);
+                resiE.removeAttribute("disabled");
+            }
+        }
+        var citys = new Array();
+        citys['北京'] = ['1','2','3','4'];
+        citys['上海'] = ['5','6','7','8'];
+        citys['广东'] = ['9','10','11'];
+        function createCity (){
+            var getCity = document.getElementById("city");
+            // getCity.innerHTML = "";两种清空方法
+            for(var i in citys){
+                var option = document.createElement("option");
+                option.text = i;
+                option.value = i;
+                getCity.options.add(option);
+            }
+            createArea();
+        }
+        function createArea (){
+            var getArea = document.getElementById("area");
+            getArea.options.length = 0;
+            var currentCity = document.getElementById("city").value;
+            for(var i in citys[currentCity]){
+                var option = document.createElement("option");
+                option.text = citys[currentCity][i];
+                option.value = citys[currentCity][i];
+                getArea.options.add(option);
+            }
+        }
+    </SCRIPT>
+</head>
+<body onload="createCity()">
+<fieldset STYLE="width: 400px;margin: 0 auto;" >
+    <legend style="font-size:20px;color:gray;">注册新用户</legend>
+    <input type="button" value="邮箱注册" id="resiE" onclick="switchRegister('email')">
+    <input type="button" value="手机注册" id="resiP" onclick="switchRegister('phone')">
+    <div id="emailRegister" class="emailRegister" >
+        <p>
+            <lable>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱：</lable>
+            <input id="txtEmail" type="text" />
+        </p>
+        <p>
+            <lable>创建密码：</lable>
+            <input id="txtPwE" type="text" />
+        </p>
+        <p>
+            <lable>确认密码：</lable>
+            <input id="txtPwConE" type="text" />
+        </p>
+        <p>
+            <label>所在城市：</label>
+            <select id="city" onchange="createArea()">
+            </select>
+            <select id="area">
+            </select>
+        </p>
+        <p>
+            <label>&nbsp;&nbsp;&nbsp;验证码：</label>
+            <input id="txtName" type="text" /> <img src="images/code_img.gif" align ="center">
+        </p>
+    </div>
+    <div id="phoneRegister" class="phoneRegister">
+        <p>
+            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电话：</label>
+            <input id="txtPhone" type="text" class="txt" />
+        </p>
+        <p>
+            <label>短信验证：</label>
+            <input id="txtPwd" type="password" class="txt"/>
+        </p>
+        <p>
+            <label>创建密码：</label>
+            <input id="txtPw" type="text" />
+        </p>
+        <p>
+            <label>确认密码：</label>
+            <input id="txtPwCon" type="text" />
+        </p>
+    </div>
+    <p>
+    <div id="nav" onmouseover="this.getElementsByTagName('a')[0].style.backgroundImage = 'url(images/reg_over.jpg)'"
+         onmouseout="this.getElementsByTagName('a')[0].style.backgroundImage = 'url(images/register.jpg)'"><a href="#"></a></div>
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#">美淘网用户协定</a>
+    </p>
+</fieldset>
+</body>
+</html>

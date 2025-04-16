@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="css/treeview1.css">
+  <script src="JS/jquery-1.8.3.min.js"></script>
+  <script>
+    //区分有内容无内容的li，创建标签元素加入+—符号
+    function initTree (){
+      //有内容
+      var $menu = $("div#menu>ul").find("li:has(ul:not(:empty))");
+      $menu.each(function(){
+        var $spanMenuIcon = $("<span class='symbols'></span>");
+        $spanMenuIcon.addClass("bgplus").removeClass("bgminus");
+        $spanMenuIcon.prependTo($(this));
+      });
+      //无内容
+      var $noMenu = $("div#menu>ul").find("li:not(li:has(ul))");
+      $noMenu.each(function (){
+        var $spanMenuIcon = $("<span class='symbols'></span>");
+        $spanMenuIcon.css({"background-image":"url(images/page.png"});
+        $spanMenuIcon.prependTo($(this));
+      })
+    };
+    $(function(){
+      initTree();
+      var $able = $("div#menu>ul").find("li:has(ul:not(:empty))");
+      $able.click(function(){
+        // 切换当前父菜单下的子菜单的可见性
+        $(this).children("ul").toggle();
+        return false;
+      });
+
+      $able.children("ul").click(function(){
+        // 切换当前父菜单下的子菜单的可见性
+        $(this).children("ul").toggle();
+      });
+    });
+  </script>
+</head>
+<body>
+<div id="menu">
+  <ul>
+    <li><a href="#">全部商品分类</a>
+      <ul>
+        <li><a href="#">美食</a></li>
+        <li><a href="#">旅游</a></li>
+        <li><a href="#">酒店</a>
+          <ul>
+            <li><a href="#">豪华酒店</a></li>
+            <li><a href="#">公寓酒店</a></li>
+            <li><a href="#">度假首选</a></li>
+            <li><a href="#">经济有爱</a></li>
+            <li><a href="#">客栈情怀</a></li>
+          </ul>
+        </li>
+        <li><a href="#">电影</a></li>
+        <li><a href="#">KTV</a></li>
+        <li><a href="#">时尚</a></li>
+        <li><a href="#">生活服务</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

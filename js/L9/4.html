@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.0.min.js"></script>
+    <script>
+        //toggle事件方法已经在jQuery 1.9版本之后被移除了;JQ文件报错
+        // $(function(){
+        //     $("img").toggle(
+        //         function(){
+        //             $(this).attr({"src":"images/fj2.jpg","title":"马来西亚"})},
+        //         function(){
+        //             $(this).attr({"src":"images/fj3.jpg","title":"迪拜"})},
+        //         function (){
+        //             $(this).attr({"src":"images/fj1.jpg","title":"美国"})}
+        //     );
+        // });
+        $(function(){
+            var images = [
+                {"src": "images/fj1.jpg", "title": "美国"},
+                {"src": "images/fj2.jpg", "title": "马来西亚"},
+                {"src": "images/fj3.jpg", "title": "迪拜"}
+            ];
+            var index = 0; // 当前图片索引
+            $("img").click(function(){
+                index = (index + 1) % images.length; // 计算下一个图片索引
+                $(this).attr("src", images[index].src);
+                $(this).attr("title", images[index].title);
+            });
+        });
+    </script>
+</head>
+<body>
+<img src="images/fj1.jpg" title="美国"/>
+</body>
+</html>

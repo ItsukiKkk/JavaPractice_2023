@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+	var time = new Date();
+	var month = time.getMonth();
+	var travelClass = "头等舱";
+	var price = 3200;
+	var discount;
+	if(month <= 10 || month >= 5){
+		if(travelClass == "头等舱"){
+			price *= 0.9;
+			discount = 0.9;
+		}else{
+			price *= 0.75;
+			discount = 0.75;
+		}
+	}else{
+		if(travelClass == "头等舱"){
+			price *= 0.6;
+			discount = 0.6;
+		}else{
+			price *= 0.3;
+			discount = 0.3;
+		}
+	}
+	document.write("您的机票原价是："+3200+"<br/>出行的月份是："+month+"<br/>舱位是："+travelClass+"<br/>折扣是:"+discount+"<br/>最终价格是："+price)
+</script>
+</body>
+</html>

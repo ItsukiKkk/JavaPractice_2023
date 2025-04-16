@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+table{
+	padding:0px;
+	margin:0px;
+	font-size:13px;
+}
+hr{
+	1px;
+	}
+.left{
+	line-height:40px;
+	text-align:right;
+	font-size:18px;
+	padding-top:37px;
+	padding-right:10px;
+}
+.top{
+	text-align:left;
+	font:18px bold 黑体;
+	background-image:url(image/news_nav.gif)
+}
+.bot{
+	margin-bottom:5px;
+	margin-top:20px;
+}
+.bott{
+	margin-bottom:40px;
+	margin-top:20px;
+	text-align:center;
+}
+#botton{
+	height:30px;
+	width:80px;
+	margin-top:10px;
+}
+#text{
+	width:200px;
+	height:18px;
+	margin-top:8px;
+	margin-bottom:8px;
+	
+}
+#border{
+	border:none;
+}

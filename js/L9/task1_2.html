@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<link rel="stylesheet" href="css/task1.css">
+<script src="JS/jquery-1.11.0.min.js"></script>
+<script>
+  //多列删除
+  var isMulDel = false;
+  //真正有用的删除多行
+  function DelMulItems() {
+    var delCount;
+    //得到一个JQ对象数组；each
+    $cbObjs = $("input[type='checkbox']:checked");
+    delCount = $cbObjs.length;
+    if (delCount != 0) {
+      $cbObjs.each(function () {
+        $(this).parents("tr").remove();
+      });
+    }
+  }
+  //单列删除
+  function showMask(){
+    var bh = $("body").height();
+    var bw = $("body").width();
+    $("div#mask").css({
+      height:bh+"px",
+      width:bw+"px",
+      display:"block"
+    });
+  }
+  var delRowId;
+  $(function(){
+    $("a.btnDel").click(function(){
+      delRowId = $(this).parents("tr").attr("id");//attr返回id
+      console.info(delRowId);
+      showMask();
+      $("#dialog").show();
+    });
+
+    $("div#title p").click(function(){
+      $("#mask,#dialog").hide();
+    });
+    $("#btnSure").click(function(){
+      $("table tr[id='"+delRowId+"']").remove();
+      $("#dialog,#mask").hide();
+    });
+    // 多列删除
+    // 删除按钮用来调用mask
+    $("#btn").click(function(){
+      showMask();
+      $("#dialog").show();
+      isMulDel = true;
+    });
+      // 绑定多选删除事件
+      $("#btnSure").click(function(){
+        if(!isMulDel){
+          $("table tr[id='"+delRowId+"']").remove();
+        }else{
+          DelMulItems();
+        }
+        $("#dialog").hide();
+        $("#mask").hide();
+      });
+      //为什么这段不能运行
+    //       $("#btn").click(function(){
+    //         $("input[type='checkbox']:checked").each(function(){
+    //           $(this).parent("tr").remove();
+    //         });
+    //       });
+  });
+
+</script>
+<body>
+
+<div id="container">
+  <table>
+    <caption>订单表</caption>
+    <tr>
+      <td>选项</td>
+      <td>编号</td>
+      <td>项目</td>
+      <td>状态</td>
+      <td>数量</td>
+      <td>操作</td>
+    </tr>
+    <tr id="1001">
+      <td>
+        <input type="checkbox">
+      </td>
+      <td>1001</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><a href="#" class="btnDel" onclick="return false">删除</a></td>
+    </tr>
+    <tr id="1002">
+      <td>
+        <input type="checkbox">
+      </td>
+      <td>1002</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><a href="#" class="btnDel" onclick="return false">删除</a></td>
+    </tr>
+    <tr id="1003">
+      <td>
+        <input type="checkbox">
+      </td>
+      <td>1003</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><a href="#" class="btnDel" onclick="return false">删除</a></td>
+    </tr>
+    <tr>
+      <td colspan="6" style="text-align:left;height: 40px;padding-top: 5px;">
+        <input type="checkbox">全选
+        <input type="button" value="删除" id="btn">
+      </td>
+    </tr>
+  </table>
+  <div id="dialog">
+    <div id="title">
+      <div id="info">确认删除吗？</div>
+      <div id="sure"><input type="button" value="确认" id="btnSure"></div>
+      <p>取消</p>
+    </div>
+  </div>
+  <div id="mask"></div>
+</div>
+</body>
+</html>

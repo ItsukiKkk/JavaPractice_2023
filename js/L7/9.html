@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    input.txt{
+        border:1px solid #CCC;
+    }
+</style>
+<script src="JS/jquery-1.11.0.min.js"></script>
+<script>
+    $(function(){
+        $("#pa :button").click(function(){
+            $("#pa:text.enabled").css("border","1px solid #039");
+        })
+        $("#pa :button").click(function(){
+            $("#pb:radio.checked").css("background-color","#63C");
+        })
+        $("#pa :button").click(function(){
+            $("#pc:checkbox.checked").css("background-color","#63C");
+        })
+        $("#pa :button").click(function(){
+            var info = "您最喜欢的球星是：";
+            info += $("#pd :input option:selected").val();
+            alert("info");
+        })
+    });
+</script>
+<body>
+<form id="form1">
+    <p id="pa">
+        <input type="text" value="可用文本框" class="txt">
+        <input type="text" value="不可用文本框" disabled = "disabled" class="txt">
+        <input type="button" value="选取可用文本框">
+    </p>
+    <p id="pb">请选择您是否喜欢旅游<br/>
+        <input type="radio" value="喜欢" name="trip">喜欢
+        <input type="radio" value="不喜欢" name="trip">不喜欢
+        <input type="radio" value="无所谓" name="trip">无所谓
+        <input type="button" value="显示" >喜欢
+    </p>
+    <p id="pc">您对哪些运动感兴趣<br/>
+        <input type="checkbox" name="sport" value="跑步">跑步
+        <input type="checkbox" name="sport" value="打球">打球
+        <input type="checkbox" name="sport" value="登山">登山
+        <input type="checkbox" name="sport" value="跳肚皮舞">跳肚皮舞
+        <input type="button" value="显示">
+    </p>
+    <p id="pd">您最喜欢的足球模型<br/>
+        <select>
+            <option value="利益"></option>
+            <option value="卡卡"></option>
+            <option value="梅西"></option>
+            <option value="c罗"></option>
+            <input type="button" value="显示">
+        </select>
+    </p>
+</form>
+</body>
+</html>

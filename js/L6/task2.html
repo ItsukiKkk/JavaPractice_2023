@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+    function checkName () {
+    var name = $("txtName").value;
+    var name_prompt = $("span_name");
+    var nameReg = /^[a-zA-Z0-9](?:[a-zA-Z0-9._-]{2,16}[a-zA-Z0-9])?$/;
+    if (!nameReg.test(name)) {
+      name_prompt.innerHTML = "错误，由字母数字下划线点减号组成的的4-18位字符，以数字或字母开头或结尾";
+      return false;
+    }
+    name_prompt.innerHTML = "格式正确";
+    return true;
+  }
+  function checkNick() {
+    var nick = $("txtNick").value;
+    var nick_prompt = $("span_nick");
+//var nickReg=/^[\u4e00-\u9fa5] 12,61S/i
+    var nickReg = /^[\u4e00-\u9fa5]{2,6}$/;
+    if (!nickReg.test(nick)) {
+      nick_prompt.innerHTML = "错误，由2~6个汉字组成";
+      return false;
+    }
+    nick_prompt.innerHTML = "格式正确";
+    return true;
+  }
+  function check() {
+    if (checkName() && checkNick()) {
+      return true;
+    }
+    return false;
+  }
+</script>
+<FIELDSET>
+    <LEGEND>填写注册信息</LEGEND>
+    <form onsubmit="return check()" action="success.html">
+        <label>
+            <p>用户名：<input type="text" id="txtName" onblur="checkName()"><span id="span_name"></span></p>
+        </label>
+        <label>
+            <p>昵称：<input type="text" id="txtNick" onblur="checkNick()"><span id="span_nick"></span></p>
+        </label>
+        <input type="submit" value="提交" >
+    </form>
+</FIELDSET>
+</body>
+</html>

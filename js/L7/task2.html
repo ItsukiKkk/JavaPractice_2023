@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="JS/jquery-1.11.0.min.js"></script>
+<script>
+    $(function(){
+        $("#click").click(function(){
+            var flag = $("ul li:gt(3)").is(":visible");
+            if(flag){
+                $("ul li:gt(3)").css("display","none");
+                $(this).text("展开")
+            }else{
+                $("ul li:gt(3)").css("display","list-item");
+                $(this).text("收起")
+            }
+        });
+    });
+</script>
+<body>
+<ul>近期电影排行榜……<a href="#" id="click">（收起）</a>
+    <li>爸爸去哪</li>
+    <li>澳门风云</li>
+    <li>极品飞车</li>
+    <li>前任攻略</li>
+    <li>雪国列车</li>
+    <li>机械战警</li>
+    <li>百日烈火</li>
+    <li>冰雪奇缘</li>
+</ul>
+</body>
+</html>

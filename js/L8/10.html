@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="JS/jquery-1.11.0.min.js"></script>
+<script>
+    $(function(){
+        $("#song").blur(function(){
+            var $li = $("<li>"+$(this).val()+"</li>");
+            $li.prependTo($("ul"));
+        });
+    });
+</script>
+<body>
+<ul>
+    <li>想起-韩雪</li>
+    <li>没那么简单-黄小唬</li>
+    <li>指望-郁可唯</li>
+</ul>
+<input type="text" id="song"/>
+</body>
+</html>

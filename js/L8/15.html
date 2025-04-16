@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="JS/jquery-1.11.0.min.js"></script>
+<script>
+    $(function(){
+       $("input[type='button']").click(function (){
+           $("img").each(function(index){
+               this.style.border="1px solid #f00";
+               this.title="第"+(index+1)+"幅风景";
+           });
+       });
+    });
+</script>
+<body>
+<img src="images/island.jpg" ><img src="images/green.jpg">
+<input type="button" value="添加边框">
+</body>
+</html>

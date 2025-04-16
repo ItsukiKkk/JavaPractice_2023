@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>页面整体布局</title>
+<style type="text/css">
+	*{margin-top:0px;
+	 padding:0px;}
+	body{
+		padding:0px;
+		border:1px solid black;
+		margin-left:200px;
+		width:980px;
+		}
+	.top{
+		border:1px solid black;
+		width:980px;
+		height:110px;
+		margin:0 auto;
+		}
+	.left{
+		float:left;
+		background-color:blue;
+		width:200px;
+		height:200px;
+		}
+	.center{
+		width:580px;
+		float:left;
+		height:200px;
+	}
+	.right{
+		width:194px;
+		float:left;
+		height:200px;
+	}
+	.bot{
+		border:1px solid black;
+		width:980px;
+		height:120px;
+	}
+	#clear{
+		clear:both;
+		border:none;
+	}
+</style>
+
+</head>
+
+<body>
+	<div class="top">顶部</div>
+    <div class="left">左部</div><div class="center">中部</div><div class="right">右部</div><div id="clear"></div>
+    <div class="bot">底部</div>
+</body>
+</html>

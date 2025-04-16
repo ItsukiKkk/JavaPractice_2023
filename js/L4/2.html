@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="myclock"></div>
+<script>
+    function showTime(){
+        var today = new Date;
+        var year = today.getFullYear();
+        var month = today.getMonth();
+        var day = today.getDay();
+        var hh = today.getHours();
+        var mm = today.getMinutes();
+        var ss = today.getSeconds();
+        document.getElementById("myclock").innerHTML = year+"年"+month+"月"+day+"日"
+        +hh+"时"+mm+"分"+ss+"秒";
+    }
+    window.setInterval("showTime()",1000);
+    window.onload = showTime;
+</script>
+</body>
+</html>

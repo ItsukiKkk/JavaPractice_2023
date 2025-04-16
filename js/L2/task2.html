@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<div>
+    	<fieldset>
+        	<legend>用户登录</legend>
+				<p>
+                	<lable>邮箱：</lable>
+                    <input id="txtEmail" type="text" class="txt" />
+                </p>
+                <p>
+                	<lable>密码：</lable>
+                    <input id="txtPwd" type="password" class="txt"/>
+                </p>
+                <p>
+                	<input type="button" value="登录"  onclick="checkLogin()"/>
+                    <a href="#">忘记密码</a> 
+                </p>
+        </fieldset>
+    </div>
+    <script>
+		function checkLogin(){
+			var userEmail = document.getElementById("txtEmail").value;
+			var userPwd = document.getElementById("txtPwd").value;
+			if(userEmail == "123@qq.com" && userPwd == "123456"){
+				alert("登录成功");
+			}else{
+				alert("登录失败");
+			}
+		}
+		function keyFun(){
+			var key = even.keyCode;
+			if(key == 27){
+				window.close();	
+			}
+			if(key == 13){
+				checkLogin();
+			}
+		}
+    </script>
+</body>
+</html>

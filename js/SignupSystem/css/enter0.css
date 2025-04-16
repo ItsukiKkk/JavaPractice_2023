@@ -1,0 +1,22 @@
+body{
+    width: 900px;
+    margin: 0 auto;
+}
+#sign{
+    width: 150px;
+    height: 40px;
+}
+#image{
+    float: right;
+    width: 210px;
+    height: 210px;
+    background-color: cadetblue;
+}
+#image img{
+    margin: 5px 0px 0px 5px;
+    width: 200px;
+    height: 200px;
+}
+table{
+    border:1px black solid;
+}

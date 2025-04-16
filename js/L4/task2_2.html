@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #nav{
+            width:145px;
+            height: 34px;
+            float: left;
+        }
+        #nav a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-image: url(images/register.jpg);
+            background-size: inherit;
+        }
+        .phoneRegister {
+            display: none;
+        }
+        input.txt {
+            outline: none; /* 移除轮廓样式 */
+        }
+    </style>
+    <SCRIPT>
+        function switchRegister(type) {
+            var emailRegister = document.getElementById("emailRegister");
+            var phoneRegister = document.getElementById("phoneRegister");
+            var resiE = document.getElementById("resiE");
+            var resiP = document.getElementById("resiP");
+
+            if (type === 'email') {
+                emailRegister.style.display = 'block';
+                phoneRegister.style.display = 'none';
+                resiE.setAttribute("disabled", true);
+                resiP.removeAttribute("disabled");
+            } else if (type === 'phone') {
+                emailRegister.style.display = 'none';
+                phoneRegister.style.display = 'block';
+                resiP.setAttribute("disabled", true);
+                resiE.removeAttribute("disabled");
+            }
+        }
+        var citys = new Array();
+        citys['北京'] = ['1','2','3','4'];
+        citys['上海'] = ['5','6','7','8'];
+        citys['广东'] = ['9','10','11'];
+        function createCity (){
+            var getCity = document.getElementById("city");
+            // getCity.innerHTML = "";两种清空方法
+            for(var i in citys){
+                var option = document.createElement("option");
+                option.text = i;
+                option.value = i;
+                getCity.options.add(option);
+            }
+            createArea();
+        }
+        function createArea (){
+            var getArea = document.getElementById("area");
+            getArea.options.length = 0;
+            var currentCity = document.getElementById("city").value;
+            for(var i in citys[currentCity]){
+                var option = document.createElement("option");
+                option.text = citys[currentCity][i];
+                option.value = citys[currentCity][i];
+                getArea.options.add(option);
+            }
+        }
+        function $(id){
+            return document.getElementById(id);
+        }
+        function checkName(){
+            var name = $("txtName").value;
+            if(name.trim() === "") {
+                $("nameNotice").innerHTML = "不能为空";
+                return false;
+            }
+            if(name.length > 16 || name.length < 4){
+                $("nameNotice").innerHTML = "用户名长度要在4-16之间";
+                return false;
+            }
+            for(var i in name){
+                var char = name.charAt(i);
+                if(!isNaN(char)){
+                    $("nameNotice").innerHTML = "不能包含数字";
+                    return  false;
+                }
+            }
+            $("nameNotice").innerHTML = "正确";
+            return true;
+        }
+        function checkEmail(){
+            var email = $("txtEmail").value;
+            if(email.trim() === "") {
+                $("emailNotice").innerHTML = "email不能为空";
+                return false;
+            }
+            if(email.indexOf("@") == -1){
+                $("emailNotice").innerHTML = "邮箱必须包含@和.";
+                return false;
+            }
+            if(email.indexOf(".") == -1){
+                $("emailNotice").innerHTML = "邮箱必须包含@和.";
+                return false;
+            }
+            $("emailNotice").innerHTML = "正确";
+            return true;
+        }
+        function checkPwd(){
+            var pwd = $("txtPwd").value;
+            if(pwd.trim() === ""){
+                $("pwdNotice").innerHTML = "请输入值"
+                return false
+            }
+            if(pwd.length < 6 || pwd.length > 32){
+                $("pwdNotice").innerHTML = "密码长度为6-32"
+                return false
+            }
+            $("pwdNotice").innerHTML = "正确"
+            return true;
+        }
+        function reCheckPwd(){
+            var rePwd = $("txtConfirm").value;
+            var pwd = $("txtPwd").value;
+            if(rePwd.trim() === ""){
+                $("comfirmNotice").innerHTML = "请输入密码";
+                return false;
+            }
+            if(rePwd != pwd){
+                $("comfirmNotice").innerHTML = "两次输入不一致";
+                return false;
+            }
+            $("comfirmNotice").innerHTML = "两次输入一致";
+            return true;
+        }
+        function check(){
+            if(checkName() && checkPwd() && reCheckPwd() && checkEmail()){
+                $("myForm").submit();
+                return true;
+            }else{
+                return false;
+            }
+        }
+        function lightTxt(obj){
+            $("txtPwd").style.borderColor = "#CCC";
+            $("txtName").style.borderColor = "#CCC";
+            $("txtConfirm").style.borderColor = "#CCC";
+            $("txtEmail").style.borderColor = "#CCC";
+            $(obj).style.borderColor = "red";
+        }
+    </SCRIPT>
+</head>
+<body onload="createCity()">
+<fieldset STYLE="width: 500px;margin: 0 auto;" >
+    <legend style="font-size:20px;color:gray;">注册新用户</legend>
+    <input type="button" value="邮箱注册" id="resiE" onclick="switchRegister('email')">
+    <input type="button" value="手机注册" id="resiP" onclick="switchRegister('phone')">
+    <form action="success.html" id="myForm">
+    <div id="emailRegister" class="emailRegister" >
+        <p>
+            <lable>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱：</lable>
+            <input id="txtEmail" type="text" onblur="checkEmail()" onfocus="lightTxt('txtEmail')" class="txt"/>
+            <span id="emailNotice"></span>
+        </p>
+        <p>
+            <lable>&nbsp;&nbsp;&nbsp; 用户名：</lable>
+            <input id="txtName" type="text" onblur="checkName()" onfocus="lightTxt('txtName')" class="txt"/>
+            <span id="nameNotice"></span>
+        </p>
+        <p>
+            <lable>创建密码：</lable>
+            <input id="txtPwd" type="text" onblur="checkPwd()" onfocus="lightTxt('txtPwd')" class="txt"/>
+            <span id="pwdNotice"></span>
+        </p>
+        <p>
+            <lable>确认密码：</lable>
+            <input id="txtConfirm" type="text" onblur="reCheckPwd()" onfocus="lightTxt('txtConfirm')" class="txt"/>
+            <span id="comfirmNotice"></span>
+        </p>
+        <p>
+            <label>所在城市：</label>
+            <select id="city" onchange="createArea()">
+            </select>
+            <select id="area">
+            </select>
+        </p>
+        <p>
+            <label>&nbsp;&nbsp;&nbsp;验证码：</label>
+            <input id="txtName1" type="text" /> <img src="images/code_img.gif" align ="center">
+        </p>
+    </div>
+    </form>
+    <div id="phoneRegister" class="phoneRegister">
+        <p>
+            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电话：</label>
+            <input id="txtPhone" type="text" class="txt" />
+        </p>
+        <p>
+            <label>短信验证：</label>
+            <input id="txtPwd1" type="password" class="txt"/>
+        </p>
+        <p>
+            <label>创建密码：</label>
+            <input id="txtPw" type="text" />
+        </p>
+        <p>
+            <label>确认密码：</label>
+            <input id="txtPwCon" type="text" />
+        </p>
+    </div>
+    <p>
+    <div id="nav" onmouseover="this.getElementsByTagName('a')[0].style.backgroundImage = 'url(images/reg_over.jpg)'"
+         onmouseout="this.getElementsByTagName('a')[0].style.backgroundImage = 'url(images/register.jpg)'"><a onclick="check()"></a></div>
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#">美淘网用户协定</a>
+    </p>
+</fieldset>
+</body>
+</html>

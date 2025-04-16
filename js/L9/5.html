@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="JS/jquery-1.11.0.min.js"></script>
+<script>
+    $(function(){
+        $("input[type='button']").one("click",function(){
+            var id = $("input[type='hidden']").val();
+            $(this).val("编号是："+id);
+        });
+    });
+</script>
+<body>
+<input type="hidden" value="012">
+<input type="button" value="查看编号">
+</body>
+</html>

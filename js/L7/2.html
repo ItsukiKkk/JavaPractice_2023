@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="JS/jquery-1.11.0.min.js"/></script>
+<style>
+    .highLight{
+        color:#00F;
+        cursor:pointer;
+    }
+</style>
+<script>
+    $(function(){
+        $("h3").click(function (){
+            $(this).toggleClass("highLight").next("ul").toggle();
+        });
+    });
+</script>
+<body>
+<h3>娱乐文化</h3>
+<ul>
+    <li>鲜花绿植</li>
+    <li>宠物世界</li>
+    <li>古董收藏</li>
+    <li>影像音乐</li>
+</ul>
+</body>
+</html>

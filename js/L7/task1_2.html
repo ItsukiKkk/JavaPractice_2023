@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.0.min.js"></script>
+    <style>
+        body{
+            font-size: 12px;
+        }
+        dl{
+            height: 200px;
+            width: 400px;
+        }
+        dt{
+            float: left;
+            margin-right: 20px;
+        }
+        dd{
+            line-height:20px;
+        }
+    </style>
+    <script>
+        $(function(){
+           $("#movie>dd>span").css("color,:red");
+           $("#movie dd span:eq(1)").css("color","orange");
+           $("#movie a:not([title])").css("text-docoration","none");
+        });
+    </script>
+</head>
+<body>
+<dl id="movie">
+    <dt><img src="images/frozen.jpg" width="150px" height="200px"></dt>
+    <dd><span>评分：</span><span>8.4</span></dd>
+    <dd><span>别名：</span><span>冰雪大世界</span></dd>
+    <dd><span>演员：</span><span><a href="#">伊迪娜 门泽尔</a></span></dd>
+    <dd><span>导演：</span><span><a href="#">克里斯巴克</a></span></dd>
+    <dd><span>地区：</span><span>美国</span></dd>
+    <dd><span>简介：</span><span>《Frozen》讲述一个诅咒令王国被冰天雪地永久覆盖，乐观无畏的安娜（由克里汀贝尔配音）和一个大胆的...</span></dd>
+    <dd><a href="#">more</a></dd>
+</dl>
+</body>
+</html>

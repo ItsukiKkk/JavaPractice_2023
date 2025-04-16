@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .input{
+            border: #CC3300;
+        }
+        .bg{
+            background-color: #616161;
+        }
+    </style>
+    <script src="JS/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function(){
+            $("input[type='text']").trigger("select");
+            $("input[type='text']").focus(function (){
+                $(this).addClass("input")
+                var tagP = $(this).parent();
+                tagP.addClass("bg");
+            });
+            var reg = new RegExp
+            reg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            $("input[type='text']").blur(function(){
+                $(this).removeClass("input");
+                var tagP = $(this).parent();
+                tagP.removeClass("bg");
+                if($(this).val() == ""){
+                    $("span").html("邮箱地址必填");
+                    return false;
+                };
+                if (reg.test(this.value)){
+                    $("span").html("<img src='images/register_write_ok.gif'>");
+                    return true;
+                }else{
+                    $("span").html("邮箱格式错误")
+                    return false;
+                }
+
+            });
+        })
+    </script>
+</head>
+<body>
+<p>邮箱：<input type="text"><span></span></p>
+</body>
+</html>

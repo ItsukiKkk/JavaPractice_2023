@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<body>
+	<input type="text" id="ob1"/>
+    <select id="operator">
+    	<option>请选择</option>
+    	<option value="+">+</option>
+    	<option value="-">-</option>
+    	<option value="*">*</option>
+    	<option value="/">/</option>
+    </select>
+    <input type="text" id="ob2"/>
+    =
+    <input type="text" id="result"/>
+    <input type="button" onclick="calculate()" value="计算">
+    <script>
+        function calculate() {
+            var operand1 = parseFloat(document.getElementById("ob1").value);
+            var operand2 = parseFloat(document.getElementById("ob2").value);
+            var operator = document.getElementById("operator").value;
+            var result;
+			if(!isNaN(operand1) && !isNaN(operand2)){
+				switch (operator) {
+					case '+':
+						result = operand1 + operand2;
+						break;
+					case '-':
+						result = operand1 - operand2;
+						break;
+					case '*':
+						result = operand1 * operand2;
+						break;
+					case '/':
+						if (operand2 !== 0) {
+							result = operand1 / operand2;
+						} else {
+							result = "除数不能为0";
+						}
+						break;
+					default:
+						result = "请选择操作符";
+						break;
+				}
+				document.getElementById("result").value = result;
+			}else{
+				alert("请输入正确值")	
+			}
+        }
+    </script>
+</body>
+</html>
