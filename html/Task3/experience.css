@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+#top2{
+	width:1000px;
+	height:150px;
+	margin:0 auto;
+	overflow:hidden;
+	background:url(img/expbanner.png);
+	background-size:100% 100%;
+}
+#middle2{
+	width:890px;
+	height:493px;
+	background:#efefef;
+	margin:0 auto;
+	padding:0px 55px;
+}
+#left2{
+	float:left;	
+	width:730px;
+	height:493px;
+	background:#FFF;
+}
+#leftImg{
+	float:left;	
+	margin:30px;
+}
+#leftImg img{
+	height:200px;
+	width:auto;
+}
+#leftfont{
+	float:left;
+	width:255px;
+	font-size:12px;
+	color:#000;
+	line-height:30px;
+	height:260px;
+	margin-top:20px;
+}
+#prefer{
+	background:#efefef;
+	width:640px;
+	margin:0 auto;
+	padding:15px;
+	font-size:12px;
+}
+#prefer p{
+	font:25px bold;
+	color:#0C9;
+	text-align:left;
+	width:670px;
+	margin:5px auto;
+}
+#prefer ul{
+	height:140px;
+	width:570px;
+	margin:0 auto;
+}
+#prefer ul li{
+	list-style:url(img/wen.png);
+	color:#000;
+}
+#right2{
+	float:right;
+	height:130px;
+	width:135px;
+	border:2px solid #0C6;
+	margin:10px;
+	font-size:9px;
+}
+#right2 p{
+	text-align:left;
+	margin:20px 2px;
+}
+#right2 hr{
+	margin:10px;
+	color:#0C9;
+}
+#right2 div{
+	margin:0 auto;
+	width:90px;
+}
+#right2 input{
+	background-color:#F60;
+	width:90px;
+	height:25px;
+	border:none;
+	color:#FFF;
+	font-size:12px;
+}

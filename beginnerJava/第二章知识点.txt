@@ -1,0 +1,153 @@
+常用电脑快捷键
+	F2		重命名
+	ctrl+c	复制
+	ctrl+x	剪切
+	ctrl+v	粘贴
+	
+	win+d	显示桌面
+	win+e	查看盘符
+	
+	win+r	打开开始运行
+	alt+f4	关闭当前窗口
+	win+r  输入calc  	打开计算器
+	win+r  输入notepad	打开记事本
+	win+r  输入write
+
+	
+public	共有
+void	空类型
+static	静态
+class	类
+
+MyEclipse设置字体大小步骤如下：
+	Window->Preferences->General->Appearance->Colors and Fonts->Basic->Text Font
+
+
+MyEclipse快捷键
+	alt+/	快速提示
+
+java是面向对象的程序设计语言
+java程序结构
+	1、顺序结构
+	2、条件结构
+	3、循环结构
+	
+变量(3w1h)
+	what
+		变量定义：变量是一个存储空间
+	why
+		作用：存储值,存储的值可以通过赋值发生改变
+		
+	where
+		在程序需要存储值得时候去使用
+	how	
+		声明语法：
+			数据类型   变量名;
+			
+		剖析：
+			1）数据类型
+				基本数据类型
+					byte 	 int  		short 		long  
+					float 	 double   	char  		boolean   
+				引用数据类型
+					String  类   数组 对象..
+			需要掌握的数据类型
+				char 	字符
+				boolean 布尔值(true/false)
+				int	  	整型(整数)
+				double  双精度浮点(小数)
+				String 	字符串
+			例证：
+				char
+					where：单个字符，单个字母，单个汉字，单个数字
+					如：性别
+				boolean 
+					where：真(true)/假(false)
+				int 
+					where：整数数字
+					如：年龄
+				double
+					where：小数
+					如：消费、工资、生活费、钱
+				String
+					where：多个字符、多个字母、多个汉字、多个数字
+					如：姓名、性别、身份证、家庭住址、学生编号
+		
+		变量名命名规则：
+			  首字母		其后字母
+			字母 _  $     字母  _  $  数字
+		注意：
+			变量名要具备一定的描述意义
+		
+		例如：
+			name、age1、$abc、1abc
+			
+使用变量
+	
+	声明变量语法：
+		数据类型   变量名;
+		
+		//声明姓名变量
+		String   name;
+		//声明年龄变量
+		int   age;
+		//声明工资变量
+		double   salary;
+		//声明性别变量
+		char   sex; 
+		//声明家庭住址变量
+		String   address;
+		
+-----------------------------------------------------
+表达式
+	组成：由操作数和运算符组成
+运算符
+	一元运算符
+		++(加加)		--(减减)		！(逻辑非)
+	二元运算符
+		算
+			先*(乘)	 /(除)	%(求余) 后  +   -
+		关（比较运算符）
+			先>   >=   <   <=  后 ==(恒等于)     !=(不等于)
+ 		逻
+			先&&(逻辑与/并且)  后||(逻辑或/或者)
+		赋
+			先*=  /=    %=  后 +=   -=   =
+	三元运算符
+		表达式?值1:值2
+
+	3+2>8&&1!=2
+	1)5>8&&1!=2
+	2)false&&true
+	3)false
+	
+
+	注意：
+		&&并且只有两边都为真则为真
+		true&&true表达式的值为真
+		false&&true表达式的值为假
+		
+	1==2+2&&5>=8
+	1)1==4&&5>=8
+	2)1==4&&false
+	3)false&&false
+	4)false
+
+	
+	int a=1;
+	a++;//a=a+1;
+	System.out.println(a);//2
+	
+	int b=2;
+	--b;
+	System.out.println(b);//1
+						
+---------------------------------------------------------------------------
+接收用户录入数据步骤如下：
+	1）导包
+		import java.util.Scanner;
+	2）创建Scanner对象
+		Scannner sc=new Scanner(System.in);
+	3）接收数据
+		int 变量=sc.nextInt();
+		String 变量=sc.next();

@@ -1,0 +1,16 @@
+1715232216687	Rename type 'OrderMain'
+1715237606036	Rename type 'AddMenu'
+1715237630156	Rename type 'MenuMaintenance'
+1715237657248	Rename type 'AdminMenuEdit'
+1715237669966	Rename type 'AdminMenuMaintenance'
+1715306544831	Delete element
+1715306595376	Delete element
+1715310190832	Delete element
+1715312968919	Rename type 'MenuService'
+1715347023565	Delete element
+1715347029551	Delete element
+1715390123697	Rename type 'OrderService'
+1715390162726	Rename type 'OrderDetailImp'
+1715391454584	Rename type 'OrderDetail'
+1715416741567	Rename type 'AdminOrderExecute'
+1715416765742	Rename type 'AdminOrderprocessing'

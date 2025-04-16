@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#head li").bind({"mouseover":function(){
+                    $(this).addClass("current");
+                },
+                "mouseout":function(){
+                    $(this).removeClass("current");
+                }
+            })
+            $(document).bind("keypress",function(){
+                if(event.keyCode == 27){
+                    window.close();
+                }
+            });
+        });
+    </script>
+    <style>
+        .current{
+            background-color: #666;
+        }
+        li{
+            float: left;
+            width: 80px;
+        }
+        #head{
+            width: 700px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="head" >
+    <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">美食</a></li>
+        <li><a href="#">旅游</a></li>
+        <li><a href="#">酒店</a></li>
+        <li><a href="#">电影</a></li>
+        <li><a href="#">KTV</a></li>
+        <li><a href="#">时尚</a></li>
+        <li><a href="#">生活服务</a></li>
+    </ul>
+</div>
+
+</body>
+</html>

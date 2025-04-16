@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cls1{
+            font-weight: bold;
+            font-style: italic;
+            background-color: #eee;
+        }
+    </style>
+    <script src="JS/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#content").click(function(){
+                $(this).addClass("cls1");
+            });
+            $("#btn").click(function(){
+                $("#content").removeClass("cls1");
+            });
+        });
+
+    </script>
+</head>
+<body>
+<p id="content">Write Less,Do more</p>
+<input type="button" value="删除样式" id="btn">
+</body>
+</html>

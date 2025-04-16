@@ -1,0 +1,47 @@
+body{
+    font-family: Arial, Helverica, sans-serif;
+    font-size: 12px;
+    margin: 0;
+}
+p{
+    margin: 0px;
+}
+#container{
+    height: 1200px;
+    text-align: center;
+    padding-top: 50px;
+    border: 1px solid green;
+    width: 900px;
+    margin: 0px auto;
+}
+#container table{
+    width: 600px;
+    border:1px solid red;
+    border-collapse:collapse;
+}
+
+#container table td {
+    border: 1px solid red;
+}
+
+#mask {
+    background-color:gray;
+    left: 0;
+    position:absolute;
+    top: 0;
+    z-index: 100;
+    filter:alpha(opacity=30);
+    opacity: 0.3
+}
+#dialog {
+    background-color:#fff;
+    border:5px solid orange;
+    height: 150px;
+    left: 500px;
+    padding: 1px;
+    position: fixed;
+    top:100px;
+    width:300px;
+    z-index:101;
+    display: none;
+}

@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+#mvDiv1{
+	width:1000px;
+	height:420px;
+	background:#000;
+	margin:0 auto;
+}
+p{
+	margin:15px 0;
+	color:#000;
+}
+#mvDiv2{
+	width:1000px;
+	height:130px;
+	margin:0 auto;
+}
+#mvDiv1 div{
+	width:750px;
+	height:420px;
+	margin:0px auto;
+}
+#mvDiv1 video{
+	width:725px;
+	height:auto;
+	margin:10px;
+	margin:0px auto;
+}
+#mvUp{
+	width:840px;
+	height:130px;
+	margin:0px auto;
+	background:#FFF;
+	padding-top: 1px;
+}
+#mvUp img{
+	width:140px;
+	height:auto;
+}
+#mvDown{
+	width:840px;
+	height:600px;
+	margin:0px auto;
+	background:#FFF;
+}
+#mvLeft{
+	width:500px;
+	height:500px;
+	margin:0px auto;
+	float:left;
+	}
+#mvLeftPost{
+	width:500px;
+	height:30px;
+}
+#mvLeftPost input{
+	float:right;
+	width:75px;
+	height:25px;
+}
+#mvLeftCom{
+	width:500px;
+	height:120px;
+}
+.comment{
+	float:right;
+	width:440px;
+	font-size:12px;
+	line-height:18px;
+	height:48px;
+}
+.icon{
+	float:left;
+	width:48px;
+	margin:5px;
+	height:48px;
+}
+.icon img{
+	width:48px;
+	height:48px;
+}
+#mvRight{
+	width:310px;
+	height:500px;
+	margin:0px auto;
+	float:left;
+	background:url(images/topbg.jpg) no-repeat;
+	margin-top:10px;
+	margin-left:25px;
+}
+hr{
+	height:1px;
+	width:480px;
+	float:left;
+	margin:20px 5px;
+	color:#CCC;
+}

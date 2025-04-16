@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    function checkName () {
+        var name = $("txtName").value;
+        var name_prompt = $("span_name");
+        var nameReg = /^[a-zA-Z0-9](?:[a-zA-Z0-9._-]{2,16}[a-zA-Z0-9])?$/;
+        if (!nameReg.test(name)) {
+            name_prompt.innerHTML = "错误，英文字母和数宇组成的4-16位宇符，以字母开头";
+            return false;
+        }
+        name_prompt.innerHTML = "格式正确";
+        return true;
+    }
+    function checkNick() {
+        var nick = $("txtNick").value;
+        var nick_prompt = $("span_nick");
+//var nickReg=/^[\u4e00-\u9fa5] 12,61S/i
+        var nickReg = /^[\u4e00-\u9fa5\w]{2,10}$/;
+        if (!nickReg.test(nick)) {
+            nick_prompt.innerHTML = "错误，汉字、字母数字下划线的4-20位字符，汉字占两个字符组成";
+            return false;
+        }
+        nick_prompt.innerHTML = "格式正确";
+        return true;
+    }
+
+
+    function checkEmail() {
+        var email = $("txtEmail").value;
+        var email_prompt = $("span_email");
+        var emailReg = /^\w+@\w+(\.[a-zA-Z]{2,3}){1,2}$/;
+        if (!emailReg.test(email)) {
+            email_prompt.innerHTML = "c误，如seiryo@tom.com或者seiryo@sina.com";
+            return false;
+        }
+        email_prompt.innerHTML = "格式正确";
+        return true;
+    }
+    function checkPwd () {
+        var pwd=$("txtPwd").value;
+        var pwd_prompt=$("span_pwd");
+        var pwdReg=/^[a-zA-Z0-9]{4,10}$/;
+        if (!pwdReg.test (pwd)) {
+            pwd_prompt.innerHTML="由英文字母和数字成的4-10位字符";
+            return false;
+        }
+        pwd_prompt.innerHTML="格式正确";
+        return true;
+    }
+    function checkConfirmPwd () {
+        var confirmPwd = $("txtConfirmPwd").value;
+        var pwd = $("txtPwd").value;
+        var confirmPwd_prompt = $("span_confirmPwd");
+        if(confirmPwd.trim() == ""){
+            confirmPwd_prompt.innerHTML = "错误，请输入密码";
+            return false;
+        }
+        if (pwd != confirmPwd) {
+            confirmPwd_prompt.innerHTML = "错误，两次输入的密码不一致";
+            return false;
+        }
+        confirmPwd_prompt.innerHTML = "密码正确";
+        return true;
+    }
+    function checkPhone () {
+        var phone = $("txtPhone").value;
+        var phone_prompt = $("span_phone");
+        var phoneReg = /^(13|15|18)\d{9}$/;
+        if (!phoneReg.test(phone)) {
+            phone_prompt.innerHTML = "错误，手机号由11位数字组成，且以13、15、18开头";
+            return false;
+        }
+        phone_prompt.innerHTML = "格式正确";
+        return true;
+    }
+    function checkBornDate () {
+        var bornDate=$("txtBornDate").value;
+        var born_prompt=$("span_Born");
+        var bornReg=/^\d{15,18}$/;
+        if (!bornReg.test (bornDate)) {
+            born_prompt.innerHTML="错误，15-18位数字组成";
+            return false;
+        }
+        born_prompt.innerHTML="格式正确";
+        return true;
+    }
+    function check(){
+        if (checkName() &&checkNick() &&checkEmail() &&checkPwd() &&checkConfirmPwd() && checkPhone() &&checkBornDate()){
+            $("sumbitForm").submit();
+            return true;
+        }
+        return false;
+    }
+
+</script>
+<img src="images/register_logo.gif">
+<FIELDSET>
+    <LEGEND>填写注册信息</LEGEND>
+    <form action="success.html" id="sumbitForm">
+        <label>
+            <p>用户名：<input type="text" id="txtName" onblur="checkName()"><span id="span_name"></span></p>
+        </label>
+        <label>
+            <p>昵称：<input type="text" id="txtNick" onblur="checkNick()"><span id="span_nick"></span></p>
+        </label>
+        <label>
+            <p>邮箱：<input type="text" id="txtEmail" onblur="checkEmail()"><span id="span_email"></span></p>
+        </label>
+        <label>
+            <p>密码：<input type="text" id="txtPwd" onblur="checkPwd()"><span id="span_pwd"></span></p>
+        </label>
+        <label>
+            <p>确认密码：<input type="text" id="txtConfirmPwd" onblur="checkConfirmPwd()"><span id="span_confirmPwd"></span></p>
+        </label>
+        <label>
+            <p>手机号码：<input type="text" id="txtPhone" onblur="checkPhone()"><span id="span_phone"></span></p>
+        </label>
+        <label>
+            <p>身份证：<input type="text" id="txtBornDate" onblur="checkBornDate()"><span id="span_Born"></span></p>
+        </label>
+        <a href="#" onclick="check()"><img src="images/button.gif"></a>
+    </form>
+</FIELDSET>
+</body>
+</html>

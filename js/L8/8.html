@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#userEmail").focus(function(){
+                var txt_value = $(this).val();
+                if(txt_value == "seiryo@sina.com"){
+                    $(this).val("");
+                }
+            });
+            $("#userEmail").blur(function(){
+                var txt_value = $(this).val();
+                if(txt_value ==""){
+                    $(this).val("seiryo@sina.com");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<fieldset>
+<legend>登录MEITAO.COM</legend>
+<div class="box">
+    <div  id="email">
+        <p>
+            <label>邮箱：</label>
+            <input name="" type="text" class="txt" value="seiryo@sina.com" id="userEmail" />
+        </p>
+        <p>
+            <label>密码：</label>
+            <input name="" type="text" class="txt" />
+        </p>
+        <p>
+            <input type="image" src="images/login.jpg" class="btn" name="btnLogin" />
+            <a href="#">忘记密码了？</a></p>
+    </div>
+</div>
+</fieldset>
+</body>
+</html>

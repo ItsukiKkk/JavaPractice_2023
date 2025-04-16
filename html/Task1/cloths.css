@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	text-align:center;
+}
+h3{
+	color:#93C;
+	font-weight:bold;
+	margin:0px;}
+body{
+	width:1000px;
+	height:1400px;
+	margin:0 auto;
+}
+#left6{
+	width:700px;
+	height:auto;
+	float:left;
+}
+.right6Img{
+	width:280px;
+	height:auto;
+	margin-left:20px;
+}
+#right6{
+	margin-top:20px;
+	width:300px;
+	float:left;
+}	
+#right6Li{
+	height:360px;
+	width:250px;
+	margin-left:50px;
+}
+#right6Li li{
+	height:100px;
+	width:80px;
+	float:left;
+	margin:10px;
+}
+#right6Li img{
+	height:70px;
+	width:70px;
+}
+#hotb{
+	width:50px;
+	height:20px;
+	margin-left:50px;
+}
+#imgHotb{
+	float:left;
+}
+#up{
+	float:left;
+	width:200px;
+	
+	}
+#up img{
+	width:200px;
+	height:350px;
+	margin-top:20px;
+	}
+#down{
+	float:left;
+	width:500px;
+	}

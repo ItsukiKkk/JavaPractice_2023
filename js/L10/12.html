@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    ul{
+        list-style: none;
+    }
+    #main{
+        margin: 20px;
+        width: 350px;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+    }
+    #imgarea li{
+        width: 350px;
+        height: 300px;
+    }
+    #imgarea img{
+        border: none;
+    }
+    #imgID{
+        position: absolute;
+        left: 5px;
+        bottom: 5px;
+        z-index: 100;
+    }
+    #imgID li{
+        float: left;
+        color: #069;
+        text-align: center;
+        line-height: 16px;
+        width: 16px;
+        font-family: Arial;
+        font-size: 12px;
+        cursor: pointer;
+        overflow: hidden;
+        margin: 3px 1px;
+        border: 1px solid #069;
+        background-color:#fff;
+    }
+    #imgID li.active{
+        color: #fff;
+        line-height: 16px;
+        width: 16px;
+        height: 16px;
+        font-size: 14px;
+        margin: 3px 1px;
+        border: 1px solid #069;
+        background-color: #069;
+        font-weight: bold;
+    }
+</style>
+<script src="JS/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+        //定义属性，获得所需要的值
+        var index = 0;
+        var stop = false;
+        var $pageLis = $("#main").find("#imgID li");
+        $pageLis.eq(index).addClass("active")
+            .siblings().removeClass("active");
+        var mainDivh = $("div#main").height();
+        //设置循环
+        setInterval(function (){
+            if(stop) return;
+            index++;
+            if(index == $pageLis.length){
+                index = 0;
+            }
+            $("ul#imgarea").stop(true,true).animate({"marginTop":-mainDivh*index},1000);
+            $pageLis.eq(index).addClass("active").siblings().removeClass("active");
+        },3000);
+        //设置事件
+        $pageLis.mouseover(function(){
+            stop = true;
+            index = $pageLis.index($(this));
+            $("ul#imgarea").stop(true,true).animate({"marginTop":-mainDivh*index},1000);
+            $(this).addClass("active").siblings().removeClass("active");
+        }).mouseout(function(){
+            stop = false;
+        });
+    });
+</script>
+<body>
+<div id="main">
+    <ul id="imgarea">
+        <li><a href="#"><img src="images/list1.jpg"></a></li>
+        <li><a href="#"><img src="images/list2.jpg"></a></li>
+        <li><a href="#"><img src="images/list3.jpg"></a></li>
+        <li><a href="#"><img src="images/list4.jpg"></a></li>
+    </ul>
+    <ul id="imgID">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+img{
+	height:100px;
+	width:auto;
+	margin:1px;
+	}
+#top3 p{
+	width: 600px;
+	float:left;
+	margin:0px;
+	height:300px;
+}
+#top3{
+	width:1000px;
+	margin:0px auto;
+	height:260px
+}
+#imgBlock3{
+	width:290px;
+	height:250px;
+	float:left;
+	margin:10px;
+}
+#hot{
+	height:20px;
+	width:1000px;
+	margin:0px auto;
+}
+#hot img{
+	height:20px;
+	width:auto;
+	
+}
+#ul3{
+	width:1000px;
+	height:380px;
+	margin:0px auto;
+	}
+#ul3 li{
+	text-align:center;
+	height:160px;
+	width:150px;
+	float:left;
+	margin:5px;
+	}

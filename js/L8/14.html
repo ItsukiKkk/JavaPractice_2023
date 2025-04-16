@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="JS/jquery-1.11.0.min.js"></script>
+<script>
+    $(function(){
+        $("input[type='button']").click(function(){
+            $("ul li").remove("ul li:last");
+        });
+    });
+</script>
+<body>
+<ul>
+    <li>想起-韩雪</li>
+    <li>没那么简单-黄小唬</li>
+    <li>指望-郁可唯</li>
+</ul>
+<input type="button" value="删除">
+</body>
+</html>

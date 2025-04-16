@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var emps = new Array();
+        emps['人力资源部'] = ['刘青','周一','周周','王贝贝'];
+        emps['研发部'] = ['代填','刘波','程波','胡玲','周康','赵瑞'];
+        emps['市场部'] = ['陈海','徐阳','绯红','龚晓明','陈处'];
+        function initDep(){
+            var depObj = document.getElementById("selDepartment");
+            for(var index in emps){
+                var option = document.createElement("option");
+                option.text = index;
+                option.value = index;
+                depObj.options.add(option);
+            }
+        }
+        function fillEmps(){
+            var empObj = document.getElementById("selEmployee");
+            empObj.options.length = 0;
+            var currentDep = document.getElementById("selDepartment").value;
+            for(var i in emps[currentDep]){
+                var option = document.createElement("option");
+                option.text = emps[currentDep][i];
+                option.value = emps[currentDep][i];
+                empObj.options.add(option);
+            }
+        }
+    </script>
+</head>
+<body onload="initDep(),fillEmps()">
+请选择姓名：
+部门：
+<select id="selDepartment" onchange="fillEmps()"></select>
+&nbsp;
+姓名：
+<select id="selEmployee" >
+</select><script>
+
+</script>
+</body>
+</html>

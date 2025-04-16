@@ -1,0 +1,181 @@
+@charset "utf-8";
+/* CSS Document */
+*{ 
+	margin:0px;
+	padding:0px;
+	list-style-type:none;
+	text-decoration:none;
+	color:#CCC
+}
+body{
+	background:#cccccc26;
+}
+a:hover{
+	text-decoration:underline;
+	color:#00F;
+}
+#background{
+	background:#000;
+	height:35px;
+	width:1000px;
+	margin:0 auto;
+}
+#logo{
+	float:left;
+	height:32px;
+	width:auto;
+}
+#logo img{
+	height:32px;
+	width:auto;
+}
+#top{
+	height:35px;
+	font-size:9px;
+	width:460px;
+	float:left;
+}
+#top li{
+	float:left;
+	height:35px;
+	width:47px;
+	text-align:center;
+	line-height:35px;
+	color:#FFF;
+}
+#topR{
+	float:right;
+	height:35px;
+	width:400px;
+	line-height:35px;
+	font-size:11px;
+	color:#FFF;
+	float:right;
+	font-size:9px;
+}
+#floatBox1{
+	float:left;
+	margin-top:8.75px;
+}
+#floatBox2{
+	float:left;}
+#topR input{
+	height:16px;
+	width:200px;
+	margin-top:8px;
+}
+#topR img{
+	height:18px;
+	width:18px;
+}
+#downImg{
+	width:1000px;
+	height:auto;
+	margin:0 auto;
+}
+#downImg img{
+	width:1000px;
+	height:auto;
+}
+.guide{
+	width:950px;
+	height:30px;
+	margin:0 auto;
+}
+.imgFloat{
+	float:left;
+}
+.guide img{
+	height:30px;
+	width:auto;
+
+}
+.guide ul{
+	width:500px;
+	height:30px;
+	float:right;
+}
+.guide ul li{
+	width:30px;
+	height:30px;
+	line-height:30px;
+	font-size:9px;
+	float:right;
+}
+.div1{
+	width:950px;
+	height:210px;
+	margin:0 auto;
+}
+#div2{
+	width:950px;
+	height:210px;
+	margin:0 auto;
+}
+.leftImg{
+	width:352px;
+	height:auto;
+	float:left;
+}
+.leftImg img{
+	width:auto;
+	height:205px;
+}
+#rightImge{
+	float:right;
+	width:550px;
+}
+#rightImge img{
+	width:auto;
+	height:100px;
+}
+#rightImge2{
+	float:right;
+	width:368px;
+}
+#rightImge2 img{
+	width:auto;
+	height:100px;
+}
+#font{
+	background:#FFF;
+	font-size:15px;
+	float:left;
+	width:200px;
+	height:205px;
+	color:#666;
+}
+#div2 div{
+	float:left;
+	width:190px;
+	height:auto;
+	color:#000;
+	font-size:12px;
+
+}
+#div2 img{
+	width:178px;
+	height:auto;
+	margin:5px 1px;
+}
+.clear{
+	clear:both;
+	border:none;
+}
+#p1{
+	text-align:center;
+	font-size:12px;
+	margin-top:15px;
+}
+#p2{
+	text-align:center;
+	font-size:10px;
+	margin-top:15px;
+	color:#000;
+}
+#mainDown{
+	width:1000px;
+	height:auto;
+	background:#FFF;
+	margin:0 auto;
+}

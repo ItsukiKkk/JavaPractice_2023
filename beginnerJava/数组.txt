@@ -1,0 +1,45 @@
+数组：
+	作用：数组用于存储一组相同数据类型的多个元素
+	
+	特点：
+		1、数组拥有相同的名称，就是数组名
+		2、数组下标从0开始
+		3、访问数组的值通过：数组名[下标]
+		4、固定长度即长度不可改变
+	声明语法：
+		数据类型 []  数组名;
+		或
+		数据类型  数组名 [];
+		
+		剖析：
+			数据类型：int   char   double  String
+			数组名：命名规则和变量名相同
+			50个学生姓名->String [] names;
+						  String names[];
+			20个学生成绩->int [] score;
+						  int score[];
+			26个英文字母->char [] chs;
+						  char chs[];
+	声明时初始化大小
+		数据类型 [] 数组名=new 数据类型[长度];
+		或
+		数据类型 数组名[]=new 数据类型[长度];
+
+		50个学生姓名->String [] names=new String[50];
+					  String names[]=new String[50];
+		20个学生成绩->int [] score=new int[20];
+					  int score[]=new int[20];
+		26个英文字母->char [] chs=new char[26];
+					  char chs[]=new char[26];
+	注意：
+		数组中的数值型元素（包括byte、char、int、short、float、double、long）的默认值都是0。
+		布尔型的默认值是false
+
+		
+	数组赋值
+		int [] x={12,5,8,90};
+		char [] y=new char[]{'a','c','b'};
+		String [] z={"A","B","C"};
+		
+		
+	

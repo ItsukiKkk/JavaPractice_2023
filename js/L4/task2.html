@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <script>
+        function $(id){
+            return document.getElementById(id);
+        }
+        function checkName(){
+            var name = $("txtName").value;
+            if(name.trim() === "") {
+                $("nameNotice").innerHTML = "不能为空";
+                return false;
+            }
+            for(var i in name){
+                var char = name.charAt(i);
+                if(!isNaN(char)){
+                    $("nameNotice").innerHTML = "不能包含数字";
+                    return  false;
+                }
+            }
+            $("nameNotice").innerHTML = "正确";
+            return true;
+        }
+        function checkPwd(){
+            var pwd = $("txtPwd").value;
+            if(pwd.trim() === ""){
+                $("pwdNotice").innerHTML = "请输入值"
+                return false
+            }
+            if(pwd.length < 6){
+                $("pwdNotice").innerHTML = "输入错误"
+                return false
+            }
+            $("pwdNotice").innerHTML = "正确"
+            return true;
+        }
+        function reCheckPwd(){
+            var rePwd = $("txtConfirm").value;
+            var pwd = $("txtPwd").value;
+            if(rePwd.trim() === ""){
+                $("comfirmNotice").innerHTML = "请输入密码";
+                return false;
+            }
+            if(rePwd != pwd){
+                $("comfirmNotice").innerHTML = "两次输入不一致";
+                return false;
+            }
+            $("comfirmNotice").innerHTML = "两次输入一致";
+            return true;
+        }
+        function check(){
+            if(checkName() && checkPwd() && reCheckPwd()){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        function lightTxt(obj){
+            $(obj).style.borderColor = "#CCC";
+        }
+    </script>
+</head>
+<body>
+<center>
+<form onsubmit="return check()" action="success.html">
+<fieldset style="width: 500px;">
+    <legend>用户注册</legend>
+    <p>
+        <label>
+            &nbsp;&nbsp;&nbsp;用户名：<input type="text" onblur="checkName()" id="txtName" onfocus="lightTxt('txtName')">
+            <span id="nameNotice" ></span>
+        </label>
+    </p>
+    <p>
+        <label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：<input type="password" onblur="checkPwd()" id="txtPwd" onfocus="lightTxt('txtPwd')">
+        </label>
+        <span id="pwdNotice"></span>
+    </p>
+    <p>
+        <label>
+            确认密码：<input type="password" id="txtConfirm" onfocus="lightTxt('txtConfirm')" onblur="reCheckPwd()">
+            <span id="comfirmNotice"></span>
+        </label>
+    </p>
+    <input type="submit" value="提交">
+</fieldset>
+</form>
+</center>
+</body>
+</html>

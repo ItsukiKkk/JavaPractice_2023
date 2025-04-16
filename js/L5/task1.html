@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="foodlist.js" ></script>
+    <style>
+        div {
+            float: left;
+        }
+        #foods{
+            width: 120px;
+        }
+        #show{
+            width: 1000px;
+        }
+        #show dl{
+            width: 220px;
+            float: left;
+            margin: 5px;
+        }
+        #select{
+            width: 1000px;
+            float: left;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body onload="initType(),showFoods()">
+<div id="foods"></div>
+<div id="select" onchange="sortPro()">
+    <select id="sort">
+        <option value="">请选择</option>
+        <option value="1" >价格</option>
+        <option value="2" >销量</option>
+    </select>
+</div>
+<div id="show"></div>
+</body>
+</html>

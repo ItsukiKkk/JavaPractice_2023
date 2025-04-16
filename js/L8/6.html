@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cls1{
+            font-weight: bold;
+            font-style: italic;
+            background-color: #eee;
+        }
+    </style>
+    <script src="JS/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#content").click(function(){
+                $(this).toggleClass("cls1");
+            });
+        })
+    </script>
+</head>
+<body>
+<p id="content">Write Less,Do more</p>
+</body>
+</html>

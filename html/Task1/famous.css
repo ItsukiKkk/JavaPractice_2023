@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+#ul5{
+	width:1000px;
+	height:880px;
+	margin:0px auto;
+}
+#ul5 li{
+	width:320px;
+	height:450px;
+	float:left;
+	margin:5px;
+}
+img{
+	width:280px;
+	height:280px;
+}
+#people li{
+	float:left;
+	width:400px;
+	height:20px;
+	}
+#people{
+	width:800px;
+	height:240px;
+	line-height:60px;
+	margin:0 auto;
+	font-size:10px;
+}

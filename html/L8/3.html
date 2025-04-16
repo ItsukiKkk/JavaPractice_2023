@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商品图片浏览器</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+		border:0;
+		list-style-type:none;
+	}
+	p{
+		text-align:center;
+		font-weight:bold;
+	}
+	#div1{
+		width:150px;
+		height:210px;
+		border:1px solid black;
+		margin:5px auto;
+		overflow:hidden;
+		
+	}
+	#div1 img{
+		width:150px;
+		height:210px;
+		
+	}
+	#div2{
+		height:80px;
+		border:1px solid black;
+		margin:0 auto;
+	}
+	div {
+	  position: relative;
+	  margin:0 auto;
+	}
+	#nax{
+		 margin:0 auto;
+		 width:300px;
+		 height:80px;
+		 }
+	#div2 li img {
+	  width: 50px;
+	  height: 80px;
+	}
+	#div2 li{
+		float:left;
+		height:70px;
+		margin-right:10px;
+	}
+</style>
+</head>
+
+<body>
+	<p>三星手机图片展示</p>
+	<div id="div1">
+    	<ul>
+        	<li><a name="p1"><img src="image/b1.jpg" alt="手机"/></a></li>
+            <li><a name="p2"><img src="image/b2.jpg" alt="手机"/></a></li>
+            <li><a name="p3"><img src="image/b3.jpg" alt="手机"/></a></li>
+            <li><a name="p4"><img src="image/b4.jpg" alt="手机"/></a></li>
+            <li><a name="p5"><img src="image/b5.jpg" alt="手机"/></a></li>
+        </ul>
+    </div>
+    <div id="div2">
+    	<ul id="nax">
+        	<li><a href="#p1"><img src="image/b1.jpg" alt="手机"/></a></li>
+            <li><a href="#p2"><img src="image/b2.jpg" alt="手机"/></a></li>
+            <li><a href="#p3"><img src="image/b3.jpg" alt="手机"/></a></li>
+            <li><a href="#p4"><img src="image/b4.jpg" alt="手机"/></a></li>
+            <li><a href="#p5"><img src="image/b5.jpg" alt="手机"/></a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+T02	排列网页内容
+
+内容：
+	1、列表标签
+	2、表格标签
+	3、容器标签
+	
+重点
+	1、列表标签
+	2、表格标签
+	
+一、列表标签
+【why】合理排列网页内容
+1、无序列表：
+【where】导航条、文章标题列表等
+【语法】	
+	<ul type="">
+		<li>列表项</li>
+	</ul>
+【属性】
+	type		列表项符号
+		disc	实心圆（默认）
+		circle	空心圆环
+		square	正方形
+		
+2、有序列表
+【语法】	
+	<ol type="">
+		<li>列表项</li>
+	</ol>
+【属性】
+
+3、定义列表
+【where】图文混排
+【语法】	
+<dl>
+	<dt>标题</dt>
+	<dd>描述</dd>
+</dl>
+
+二、表格标签
+【why】使排列的内容简洁、整齐，便于浏览
+【where】各种常见表格，表单布局，商品浏览布局，数据浏览布局等
+1、基本结构
+【语法】	
+<table>
+	<tr>
+		<td></td>
+	</tr>
+</table>
+
+2、使用步骤
+(1)创建表格标签<table></table>
+(2)在<table></table>中创建行标签<tr></tr>
+(3)在<tr></tr>中创建单元格标签<td></td>单元格内容
+
+3、合并单元格
+(1)跨列：横向合并单元格
+<table>
+	<tr>
+		<td colspan="所跨列数"></td>
+	</tr>
+	......
+</table>
+
+(2)跨行：纵向合并单元格
+<table>
+	<tr>
+		<td rowspan="所跨列行"></td>
+	</tr>
+	......
+</table>
+
+4、高级选项
+(1)表格标题
+<caption>表格标题</caption>
+(2)表头：表格的第一行数据，粗体居中显示
+<th>
+	<td>列标题1</td>
+	<td>列标题1</td>
+</th>
+(3)分组：各分组标签内由多行<tr>组成
+<thead></thead>
+<tbody></tbody>
+<tfoot></tfoot>
+
+5、美化与布局
+(1)表格的宽、高、边框（可设置表格、行、单元格）
+【语法】
+<table width="表格宽" height="表格高" border="边框宽度">
+	 <tr>
+</table>
+【属性】
+		width			宽
+		height			高
+		border			边框
+		bordercolor	边框颜色
+(2)表格背景（可设置表格、行、单元格）
+		bgcolor				背景颜色
+		background		背景图像地址
+(3)对齐方式
+【语法】
+		align		水平对齐方式，可取值left（左）,center（中）,right（右）
+		valign		垂直对齐方式，可取值top（上）,middle（中）,buttom（下）
+(4)填充的间距
+【语法】<table cellspacing="单元格间距" cellpadding="单元格填充"></table>
+		cellspacing	单元格间距
+		cellpadding	单元格填充
+
+
+三、容器标签
+【what】组合其他HTML元素的容器
+【why】将网页各元素分组组合显示，更具条理和可重用性
+【where】网页布局中各处都经常使用
+1、<div>：块级元素，浏览器会在块级元素的起始和结束处换行
+【语法】
+<div>其他标签或内容</div>
+2、<span>：行级元素，浏览器在行级元素的起始和结束处不换行
+【语法】
+<span>其他标签或内容</span>

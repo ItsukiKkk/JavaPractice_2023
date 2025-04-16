@@ -1,0 +1,89 @@
+T03	传递网页数据
+
+内容：
+	1、表单标签
+	2、表单元素标签
+	3、使用表格布局
+	
+重点
+	1、表单和表单元素标签
+	2、get和post
+
+一、表单标签
+【what】
+【why】用于接收用户输入的信息并向其他网页传递数据
+【where】登录、注册、订单、调查、搜索等各项B/S应用
+【how】
+【语法】
+	<form name="" action="#" method="get/post">
+		表单元素
+	</form>
+【属性】
+	name		用于设置标识表单的名称
+	action		处理表单提交数据的网页地址URL
+	method	提交数据的方式，可取值：get / post
+【注意】get与post 的区别
+	（1）安全性：get方式会将数据显示在地址栏，post不显示，所以post更安全
+	（2）提交数据的长度：get有长度限制，post无长度限制，数据较大时使用post
+		
+二、表单元素标签
+【语法】
+<input name="" type=""  value="" size="" maxlength="" checked=""  />
+【属性】
+	name		表单元素名称
+	type		类型(text,password,radio,checkbox,file,button,submit,reset)
+	size			显示宽度
+	value		值
+	maxlength	能输入的最大字符长度
+	checked	是否选中，可取值 checked
+	
+1、文本框
+【语法示例】	
+<input type="text"  name="" size="" readonly="readonly" disabled />
+	readonly		只读标志
+	disabled		是否有效标志
+2、密码框
+【语法】<input type="password" name="" size=""  />
+3、单选按钮
+【语法】<input type="radio" name="" value="xx" checked="" />
+4、复选按钮
+【语法】<input type="checkbox" name="" value="xx" checked="" />
+5、文件域
+【语法】<input type="file" name="" />
+6、按钮
+【语法】
+	提交按钮		<input type="submit"  value="提交" name="" />    		
+	重置按钮		<input type="reset"   value="重置" name="" />
+	普通按钮		<input type="button"  value="普通" name="" />
+7、下拉列表
+【语法】
+<select name="" >
+	<option value="值" selected="selected">显示项的内容</option>
+	<option value="值">显示项的内容</option>
+	……
+</select>
+8、多行文本域
+【语法】
+<textarea name="" cols="列数" rows="行数">
+	文本域的内容
+</textarea>
+
+三、使用表格布局表单元素
+1、添加<form>标签
+2、在<form>中添加表格标签
+3、在表格单元格中添加文本及表单元素
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
